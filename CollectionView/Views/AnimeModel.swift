@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 struct Anime: Decodable {
     let data: [Character]?
 }
@@ -29,3 +30,4 @@ struct Image: Decodable {
 struct JPG: Decodable {
     let image_url: String?
 }
+ */

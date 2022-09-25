@@ -27,7 +27,8 @@ class ListAnimeTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? AnimeListTVCell else { return UITableViewCell() }
 
-        _ = anime[indexPath.row]
+        let anime = anime[indexPath.row]
+        cell.configur(with: anime)
 
         return cell
     }

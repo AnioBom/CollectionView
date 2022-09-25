@@ -12,7 +12,7 @@ class AnimeListTVCell: UITableViewCell {
     @IBOutlet var animeImage: UIImage!
     @IBOutlet var animeNameLabel: UILabel!
 
-    func configur(with anime: AnimeGhibli) {
-        
+    func configur(with anime: Info?) {
+        animeNameLabel.text =
     }
 }

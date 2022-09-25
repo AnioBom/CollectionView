@@ -86,13 +86,8 @@ extension MainCollectionVC: UICollectionViewDelegateFlowLayout {
 }
 //MARK: - Networking
 extension MainCollectionVC {
-    private func animeGhibli() {
-        
-    }
     private func animeCoMixWaveFilms() {
         
     }
-    private func allImages() {
-        
-    }
+    
 }

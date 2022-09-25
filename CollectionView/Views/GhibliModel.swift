@@ -7,17 +7,17 @@
 import Foundation
 
 struct AnimeGhibli: Decodable {
-    let films: [Info]?
+    let films: [Info]
 }
 
 struct Info: Decodable {
-    let title: String?
-    let image: String?
-    let movie_banner: String?
-    let description: String?
-    let director: String?
-    let release_date: String?
-    let url: String?
+    let title: String
+    let image: String
+    let movie_banner: String
+    let description: String
+    let director: String
+    let release_date: String
+    let url: String
     
     var explanation: String {
         """
@@ -28,7 +28,7 @@ struct Info: Decodable {
     }
 }
     
-    enum CodingKeys: String, CodingKeys {
+    enum CodingKeys: String, CodingKey {
         case title = "title"
         case image = "image"
         case banner = "movie_banner"
