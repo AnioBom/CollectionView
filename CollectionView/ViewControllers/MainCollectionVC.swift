@@ -46,8 +46,14 @@ class MainCollectionVC: UICollectionViewController {
         if segue.identifier == "showTableAnime" {
             guard let listAnimeTVC = segue.destination as? ListAnimeTableVC else { return }
             listAnimeTVC.fetchAnimeList()
-        }
+        } else
+        if segue.identifier == "showImages" {
+           guard let navigationVC = segue.destination as? UINavigationController else { return }
+                guard let imageVC = navigationVC.topViewController as? ImagesCollectionVC else { return }
+                imageVC.fetchImage()
+       }
     }
+    
 
     // MARK: - UICollectionViewDataSource
 
