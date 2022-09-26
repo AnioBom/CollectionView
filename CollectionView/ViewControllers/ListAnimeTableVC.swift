@@ -9,7 +9,7 @@ import UIKit
 
 class ListAnimeTableVC: UITableViewController {
     
-    private var anime: [AnimeGhibli] = []
+    private var anime: [Info] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +25,10 @@ class ListAnimeTableVC: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? AnimeListTVCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as? AnimeListTVCell else { return UITableViewCell() }
 
-        let anime = anime[indexPath.row]
-        cell.configur(with: anime)
+        let animes = anime[indexPath.row]
+        cell.configur(with: animes)
 
         return cell
     }
@@ -48,7 +48,7 @@ class ListAnimeTableVC: UITableViewController {
 
 extension ListAnimeTableVC {
     func fetchAnimeList() {
-        guard let url = URL(string: Link.films.rawValue) else { return }
+        guard let url = URL(string: Link.filmsURL.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
@@ -56,7 +56,10 @@ extension ListAnimeTableVC {
                 return
             }
             do {
-                self.anime = try JSONDecoder().decode([AnimeGhibli].self, from: data)
+                self.anime = try JSONDecoder().decode([Info].self, from: data)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             } catch {
                 print(error.localizedDescription)
             }

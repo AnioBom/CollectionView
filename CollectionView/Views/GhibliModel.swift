@@ -6,26 +6,15 @@
 //
 import Foundation
 
-struct AnimeGhibli: Decodable {
-    let films: [Info]
-}
-
 struct Info: Decodable {
-    let title: String
-    let image: String
-    let movie_banner: String
-    let description: String
-    let director: String
-    let release_date: String
-    let url: String
+    let title: String?
+    let image: String?
+    let movie_banner: String?
+    let description: String?
+    let director: String?
+    let release_date: String?
+    let url: String?
     
-    var explanation: String {
-        """
-        Description: \(description)
-        Director: \(director)
-        Date of realise: \(release_date)
-        """
-    }
 }
     
     enum CodingKeys: String, CodingKey {
@@ -37,8 +26,6 @@ struct Info: Decodable {
         case date = "release_date"
         case url = "url"
     }
-enum Link: String {
-    case films = "https://ghibliapi.herokuapp.com/films"
-}
-
+//enum Link: String {
+   // case films = "https://ghibliapi.herokuapp.com/films"
 

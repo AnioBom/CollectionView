@@ -78,29 +78,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="nay-x6-X1H" detailTextLabel="x1x-Ka-ViW" style="IBUITableViewCellStyleSubtitle" id="ggC-0Q-hKM" customClass="AnimeListTVCell" customModule="CollectionView" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="ggC-0Q-hKM" customClass="AnimeListTVCell" customModule="CollectionView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="62.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ggC-0Q-hKM" id="52j-0M-uYM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nay-x6-X1H">
-                                            <rect key="frame" x="20" y="6" width="25" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x1x-Ka-ViW">
-                                            <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GcJ-c2-QnX">
+                                            <rect key="frame" x="0.0" y="0.0" width="78" height="62.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J85-V4-OUL">
+                                            <rect key="frame" x="86" y="19" width="300" height="24.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="A32-v6-lEg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="J85-V4-OUL" secondAttribute="bottom" constant="8" id="Eeb-jh-DfE"/>
+                                        <constraint firstItem="J85-V4-OUL" firstAttribute="leading" secondItem="GcJ-c2-QnX" secondAttribute="trailing" constant="8" id="KaD-VX-fOc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="J85-V4-OUL" secondAttribute="trailing" constant="8" id="Mig-ZJ-9ly"/>
+                                        <constraint firstAttribute="bottom" secondItem="GcJ-c2-QnX" secondAttribute="bottom" id="QDE-mn-IYy"/>
+                                        <constraint firstItem="J85-V4-OUL" firstAttribute="leading" secondItem="GcJ-c2-QnX" secondAttribute="trailing" constant="8" id="RaG-mx-SPv"/>
+                                        <constraint firstItem="GcJ-c2-QnX" firstAttribute="top" secondItem="52j-0M-uYM" secondAttribute="top" id="kyk-BG-MP3"/>
+                                        <constraint firstItem="J85-V4-OUL" firstAttribute="top" secondItem="52j-0M-uYM" secondAttribute="topMargin" constant="8" id="ptC-1P-A6X"/>
+                                        <constraint firstItem="GcJ-c2-QnX" firstAttribute="leading" secondItem="52j-0M-uYM" secondAttribute="leading" id="tRT-nQ-ma4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="animeImageView" destination="GcJ-c2-QnX" id="NLB-rP-oxF"/>
+                                    <outlet property="animeNameLabel" destination="J85-V4-OUL" id="f5u-mA-DNh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -129,13 +141,27 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="l4b-s3-NKv">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="l4b-s3-NKv" customClass="ImageCollectionViewCell" customModule="CollectionView" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AAh-zp-8V0">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MlI-kO-1cf">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="leading" secondItem="AAh-zp-8V0" secondAttribute="leading" id="5L8-Y4-nW3"/>
+                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="centerX" secondItem="AAh-zp-8V0" secondAttribute="centerX" id="K6z-UR-6ez"/>
+                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="top" secondItem="AAh-zp-8V0" secondAttribute="top" id="VgN-Xi-2md"/>
+                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="centerY" secondItem="AAh-zp-8V0" secondAttribute="centerY" id="WoB-B2-a80"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="animeImageView" destination="MlI-kO-1cf" id="Rv0-OI-42Y"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -144,10 +170,13 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Anime Images" id="r1J-xu-TGb"/>
+                    <connections>
+                        <outletCollection property="imageCollectionView" destination="Z1D-mF-AhY" collectionClass="NSMutableArray" id="pca-Tg-Nny"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cK7-X5-5Lp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="763"/>
+            <point key="canvasLocation" x="908.69565217391312" y="762.72321428571422"/>
         </scene>
         <!--ImageVC-->
         <scene sceneID="Jrh-fL-ves">

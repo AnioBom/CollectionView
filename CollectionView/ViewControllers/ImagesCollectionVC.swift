@@ -8,31 +8,28 @@
 import UIKit
 
 class ImagesCollectionVC: UICollectionViewController {
+    
+    @IBOutlet var imageCollectionView: [UICollectionView]!
+    
+    private var films: [Info] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
     }
-
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        films.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
-    
-        // Configure the cell
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell()}
+      
+        let film = films[indexPath.row]
+        
+        cell.setup(with: film)
         return cell
     }
 

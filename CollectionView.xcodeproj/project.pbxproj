@@ -21,6 +21,7 @@
 		047587F528E04271002295DF /* ImagesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047587F428E04271002295DF /* ImagesCollectionVC.swift */; };
 		047587F728E04FC7002295DF /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047587F628E04FC7002295DF /* ImageVC.swift */; };
 		047587F928E0B8C6002295DF /* AnimeListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047587F828E0B8C6002295DF /* AnimeListTVCell.swift */; };
+		047587FB28E18827002295DF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047587FA28E18827002295DF /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		047587F428E04271002295DF /* ImagesCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionVC.swift; sourceTree = "<group>"; };
 		047587F628E04FC7002295DF /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		047587F828E0B8C6002295DF /* AnimeListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListTVCell.swift; sourceTree = "<group>"; };
+		047587FA28E18827002295DF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				047587F028DD88EA002295DF /* MainFirstCell.swift */,
 				047587F828E0B8C6002295DF /* AnimeListTVCell.swift */,
+				047587FA28E18827002295DF /* ImageCollectionViewCell.swift */,
 			);
 			path = CellFolders;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				047587E628DD821F002295DF /* AnimeModel.swift in Sources */,
 				047587F728E04FC7002295DF /* ImageVC.swift in Sources */,
 				047587CD28DD7E76002295DF /* AppDelegate.swift in Sources */,
+				047587FB28E18827002295DF /* ImageCollectionViewCell.swift in Sources */,
 				047587E828DD8286002295DF /* NetworkManager.swift in Sources */,
 				047587F528E04271002295DF /* ImagesCollectionVC.swift in Sources */,
 				047587F328E0343B002295DF /* GhibliModel.swift in Sources */,

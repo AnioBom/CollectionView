@@ -9,10 +9,18 @@ import UIKit
 
 class AnimeListTVCell: UITableViewCell {
     
-    @IBOutlet var animeImage: UIImage!
+    @IBOutlet var animeImageView: UIImageView!
     @IBOutlet var animeNameLabel: UILabel!
 
-    func configur(with anime: Info?) {
-        animeNameLabel.text =
+    func configur(with anime: Info) {
+        animeNameLabel.text = anime.title
+        
+        DispatchQueue.global().async {
+            guard let url = URL(string: anime.image ?? "") else { return }
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                self.animeImageView.image = UIImage(data: imageData)
+            }
+        }
     }
 }
