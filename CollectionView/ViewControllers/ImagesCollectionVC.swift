@@ -27,7 +27,7 @@ class ImagesCollectionVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell()}
       
-        let film = anime[indexPath.row]
+        let film = anime[indexPath.item]
         
         cell.setup(with: film)
         return cell
@@ -35,18 +35,14 @@ class ImagesCollectionVC: UICollectionViewController {
     
     // MARK: UICollectionViewDelegate
     
-    
-
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let animeFilm = anime[indexPath.item]
+        performSegue(withIdentifier: "showAnimeImage", sender: animeFilm)
+    }
+}
 //MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showAnimeImage" {
-            guard let imageVC = segue.destination as? ImageVC else { return }
-            imageVC.fetch
-        }
-    }
-    
-}
+   
 
 extension ImagesCollectionVC: UICollectionViewDelegateFlowLayout {
         func fetchImage() {
