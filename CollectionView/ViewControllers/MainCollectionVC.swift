@@ -40,21 +40,6 @@ class MainCollectionVC: UICollectionViewController {
         super.viewDidLoad()
     }
 
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showTableAnime" {
-            guard let listAnimeTVC = segue.destination as? ListAnimeTableVC else { return }
-            listAnimeTVC.fetchAnimeList()
-        } else
-        if segue.identifier == "showImages" {
-           guard let navigationVC = segue.destination as? UINavigationController else { return }
-                guard let imageVC = navigationVC.topViewController as? ImagesCollectionVC else { return }
-                imageVC.fetchImage()
-       }
-    }
-    
-
     // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -83,13 +68,27 @@ class MainCollectionVC: UICollectionViewController {
             performSegue(withIdentifier: "showImages", sender: nil)
         }
     }
+    // MARK: - Navigation
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTableAnime" {
+            guard let listAnimeTVC = segue.destination as? ListAnimeTableVC else { return }
+            listAnimeTVC.fetchAnimeList()
+        } else
+        if segue.identifier == "showImages" {
+           guard let navigationVC = segue.destination as? UINavigationController else { return }
+                guard let imageVC = navigationVC.topViewController as? ImagesCollectionVC else { return }
+                imageVC.fetchImage()
+       }
+    }
+    
 }
 extension MainCollectionVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: UIScreen.main.bounds.width - 48, height: 100)
     }
 }
+
 //MARK: - Networking
 extension MainCollectionVC {
     private func animeCoMixWaveFilms() {

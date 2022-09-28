@@ -61,18 +61,18 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="List" id="XxF-Yv-4TL"/>
                     <connections>
-                        <segue destination="Iaz-Nw-HJG" kind="show" identifier="showImages" id="Y4B-HH-Y77"/>
                         <segue destination="hs7-ND-KPl" kind="show" identifier="showTableAnime" id="K39-zs-xVw"/>
+                        <segue destination="g7A-MU-blm" kind="show" identifier="showImages" id="UFd-Rd-ywx"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfX-nF-lfz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909" y="71"/>
         </scene>
-        <!--Table View Controller-->
+        <!--List Anime TableVC-->
         <scene sceneID="kkG-yZ-wrY">
             <objects>
-                <tableViewController id="hs7-ND-KPl" sceneMemberID="viewController">
+                <tableViewController id="hs7-ND-KPl" customClass="ListAnimeTableVC" customModule="CollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="38l-GX-hbz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,10 +121,53 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="D0S-93-Yln"/>
+                    <connections>
+                        <segue destination="Hqk-Qr-gba" kind="presentation" identifier="showDetails" modalPresentationStyle="fullScreen" id="2CX-xX-qHI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHu-5V-UGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1763.7681159420292" y="70.982142857142847"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZR4-i0-wUX">
+            <objects>
+                <viewController id="Hqk-Qr-gba" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UWh-eT-Zdo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="XhK-Kx-tEn">
+                                <rect key="frame" x="82" y="93" width="250" height="710"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-Ax-Vmi">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="350"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr3-cV-lFB">
+                                        <rect key="frame" x="75" y="413" width="100.5" height="297"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9TX-Ax-Vmi" firstAttribute="leading" secondItem="XhK-Kx-tEn" secondAttribute="leadingMargin" id="LCQ-OG-5nr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I9x-kP-BLb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XhK-Kx-tEn" firstAttribute="centerY" secondItem="UWh-eT-Zdo" secondAttribute="centerY" id="7Zl-0Y-E5h"/>
+                            <constraint firstItem="XhK-Kx-tEn" firstAttribute="leading" secondItem="I9x-kP-BLb" secondAttribute="leading" constant="82" id="AN5-h4-FHU"/>
+                            <constraint firstItem="XhK-Kx-tEn" firstAttribute="top" secondItem="I9x-kP-BLb" secondAttribute="top" constant="49" id="plT-o7-w5X"/>
+                            <constraint firstItem="XhK-Kx-tEn" firstAttribute="centerX" secondItem="UWh-eT-Zdo" secondAttribute="centerX" id="wut-Yd-frl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbb-wS-DNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2579.7101449275365" y="70.982142857142847"/>
         </scene>
         <!--Anime Images-->
         <scene sceneID="OUp-wY-GqB">
@@ -135,32 +178,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uTU-HZ-SFJ">
-                            <size key="itemSize" width="128" height="128"/>
+                            <size key="itemSize" width="150" height="300"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="l4b-s3-NKv" customClass="ImageCollectionViewCell" customModule="CollectionView" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AAh-zp-8V0">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="166" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MlI-kO-1cf">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="262.5"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq4-WQ-Gql">
+                                            <rect key="frame" x="8" y="270.5" width="150" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="khA-EO-4XH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="leading" secondItem="AAh-zp-8V0" secondAttribute="leading" id="5L8-Y4-nW3"/>
-                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="centerX" secondItem="AAh-zp-8V0" secondAttribute="centerX" id="K6z-UR-6ez"/>
-                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="top" secondItem="AAh-zp-8V0" secondAttribute="top" id="VgN-Xi-2md"/>
-                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="centerY" secondItem="AAh-zp-8V0" secondAttribute="centerY" id="WoB-B2-a80"/>
+                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="leading" secondItem="AAh-zp-8V0" secondAttribute="leading" id="Bl4-lg-0bS"/>
+                                        <constraint firstAttribute="trailing" secondItem="cq4-WQ-Gql" secondAttribute="trailing" constant="8" id="Cs1-w3-O5k"/>
+                                        <constraint firstItem="cq4-WQ-Gql" firstAttribute="top" secondItem="MlI-kO-1cf" secondAttribute="bottom" constant="8" id="Jwy-uu-Oe9"/>
+                                        <constraint firstItem="MlI-kO-1cf" firstAttribute="top" secondItem="AAh-zp-8V0" secondAttribute="top" id="U2N-67-MA5"/>
+                                        <constraint firstItem="cq4-WQ-Gql" firstAttribute="leading" secondItem="AAh-zp-8V0" secondAttribute="leading" constant="8" id="mQB-9f-JuD"/>
+                                        <constraint firstAttribute="trailing" secondItem="MlI-kO-1cf" secondAttribute="trailing" id="mru-AK-1xT"/>
+                                        <constraint firstAttribute="bottom" secondItem="cq4-WQ-Gql" secondAttribute="bottom" constant="8" id="qcI-sS-24P"/>
+                                        <constraint firstItem="cq4-WQ-Gql" firstAttribute="top" secondItem="MlI-kO-1cf" secondAttribute="bottom" constant="8" id="y9L-ac-2C1"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="animeImageView" destination="MlI-kO-1cf" id="Rv0-OI-42Y"/>
+                                    <outlet property="animeNameLabel" destination="cq4-WQ-Gql" id="olX-rA-I2S"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -172,11 +229,12 @@
                     <navigationItem key="navigationItem" title="Anime Images" id="r1J-xu-TGb"/>
                     <connections>
                         <outletCollection property="imageCollectionView" destination="Z1D-mF-AhY" collectionClass="NSMutableArray" id="pca-Tg-Nny"/>
+                        <segue destination="zbE-gY-6sH" kind="modal" identifier="showAnimeImage" modalPresentationStyle="fullScreen" id="Dkj-qg-0iD"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cK7-X5-5Lp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908.69565217391312" y="762.72321428571422"/>
+            <point key="canvasLocation" x="1763.7681159420292" y="777.45535714285711"/>
         </scene>
         <!--ImageVC-->
         <scene sceneID="Jrh-fL-ves">
@@ -204,6 +262,7 @@
                             <constraint firstItem="jNS-Fm-ry9" firstAttribute="leading" secondItem="frO-TC-N9J" secondAttribute="leading" id="R6T-fZ-geT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lsu-Dj-zoJ"/>
                     <connections>
                         <outlet property="activityIndicator" destination="LK5-Df-lWt" id="TpL-JC-hr8"/>
                         <outlet property="imageView" destination="jNS-Fm-ry9" id="6W7-Tn-T2Y"/>
@@ -211,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35g-qO-ipf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792.753623188406" y="762.72321428571422"/>
+            <point key="canvasLocation" x="2545" y="777"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EFI-0L-J20">
@@ -236,6 +295,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g7A-MU-blm" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gv9-DH-lmJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iTe-XB-AhI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -247,12 +307,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udg-fx-Ape" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3" y="764"/>
+            <point key="canvasLocation" x="909" y="777"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Y4B-HH-Y77"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

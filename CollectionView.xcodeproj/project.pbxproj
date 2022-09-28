@@ -22,6 +22,7 @@
 		047587F728E04FC7002295DF /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047587F628E04FC7002295DF /* ImageVC.swift */; };
 		047587F928E0B8C6002295DF /* AnimeListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047587F828E0B8C6002295DF /* AnimeListTVCell.swift */; };
 		047587FB28E18827002295DF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047587FA28E18827002295DF /* ImageCollectionViewCell.swift */; };
+		04B6951E28E46A5700F0EFBF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6951D28E46A5700F0EFBF /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		047587F628E04FC7002295DF /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		047587F828E0B8C6002295DF /* AnimeListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListTVCell.swift; sourceTree = "<group>"; };
 		047587FA28E18827002295DF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		04B6951D28E46A5700F0EFBF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				047587E928DD8307002295DF /* ListAnimeTableVC.swift */,
 				047587F428E04271002295DF /* ImagesCollectionVC.swift */,
 				047587F628E04FC7002295DF /* ImageVC.swift */,
+				04B6951D28E46A5700F0EFBF /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				047587E328DD802B002295DF /* MainCollectionVC.swift in Sources */,
 				047587CF28DD7E76002295DF /* SceneDelegate.swift in Sources */,
 				047587EA28DD8307002295DF /* ListAnimeTableVC.swift in Sources */,
+				04B6951E28E46A5700F0EFBF /* DetailsViewController.swift in Sources */,
 				047587F928E0B8C6002295DF /* AnimeListTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

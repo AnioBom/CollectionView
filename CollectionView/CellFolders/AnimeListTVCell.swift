@@ -12,7 +12,7 @@ class AnimeListTVCell: UITableViewCell {
     @IBOutlet var animeImageView: UIImageView!
     @IBOutlet var animeNameLabel: UILabel!
 
-    func configur(with anime: Info) {
+    func configur(with anime: AnimeGhibli) {
         animeNameLabel.text = anime.title
         
         DispatchQueue.global().async {

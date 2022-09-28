@@ -9,7 +9,7 @@ import UIKit
 
 class ListAnimeTableVC: UITableViewController {
     
-    private var anime: [Info] = []
+    private var anime: [AnimeGhibli] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ extension ListAnimeTableVC {
                 return
             }
             do {
-                self.anime = try JSONDecoder().decode([Info].self, from: data)
+                self.anime = try JSONDecoder().decode([AnimeGhibli].self, from: data)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -64,6 +64,6 @@ extension ListAnimeTableVC {
                 print(error.localizedDescription)
             }
         }
-        
+        .resume()
     }
 }
