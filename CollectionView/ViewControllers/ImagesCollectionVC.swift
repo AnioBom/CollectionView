@@ -39,11 +39,11 @@ class ImagesCollectionVC: UICollectionViewController {
         let animeFilm = anime[indexPath.item]
         performSegue(withIdentifier: "showAnimeImage", sender: animeFilm)
     }
-}
+
 //MARK: - Navigation
 
    
-
+}
 extension ImagesCollectionVC: UICollectionViewDelegateFlowLayout {
         func fetchImage() {
             guard let url = URL(string: Link.filmsURL.rawValue) else { return }

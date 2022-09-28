@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1763.7681159420292" y="70.982142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="ZR4-i0-wUX">
             <objects>
-                <viewController id="Hqk-Qr-gba" sceneMemberID="viewController">
+                <viewController id="Hqk-Qr-gba" customClass="DetailsViewController" customModule="CollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UWh-eT-Zdo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,6 +164,10 @@
                             <constraint firstItem="XhK-Kx-tEn" firstAttribute="centerX" secondItem="UWh-eT-Zdo" secondAttribute="centerX" id="wut-Yd-frl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animeDescription" destination="Xr3-cV-lFB" id="gdu-tp-MBC"/>
+                        <outlet property="animeImageView" destination="9TX-Ax-Vmi" id="zsP-g5-Qgn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbb-wS-DNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
